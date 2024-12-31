@@ -7,7 +7,7 @@ public class variabelTipeData{
     public static void main(String[] args){
         
 //       tipeData();
-        ProgramHitungLuas.luasSegitiga();
+//        ProgramHitungLuas.luasSegitiga();
 //        konversiData();
     }
     
