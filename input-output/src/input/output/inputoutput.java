@@ -5,6 +5,7 @@ import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Console;
 
 public class inputoutput{
  
@@ -12,7 +13,9 @@ public class inputoutput{
         System.out.println("hello");
         pow("eko");
 //        inputScanner();
-        inputBufferReader();
+//        inputBufferReader();
+//        inputConsoelTest();
+        outputFormat();
         
     }
     
@@ -66,4 +69,33 @@ public class inputoutput{
             System.out.println("Terjadi kesalahan saat membaca input: " + e.getMessage());
         }
     }
+   
+   public static void inputConsoelTest(){
+       
+        String nama;
+        int usia;
+        
+        Console con = System.console();
+        
+        System.out.println("Input Nama: ");
+        nama = con.readLine();
+        
+        System.out.println("Input Usia: ");
+        usia = Integer.parseInt(con.readLine());
+        
+        System.out.println("Nama kamu adalah: " + nama);
+        System.out.println("Saat ini berusia: " + usia);
+   }
+   
+   // menampilkan output dengan format
+   public static void outputFormat(){
+       
+       String nama = "eko rama";
+       String namaBelakang = "dani";
+       
+       System.out.format("Nama saya %s %s %n ",nama, namaBelakang);
+       
+   }
+   
+   
 }
