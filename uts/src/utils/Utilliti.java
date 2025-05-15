@@ -30,4 +30,5 @@ public class Utilliti {
         scanner.nextLine();
         scanner.nextLine();
     }
+
 }

@@ -134,7 +134,8 @@ public class HitungHargaSmartPhone {
         System.out.println("+------------------------------->");
 
         if (idProduk < 1 || idProduk > daftarPajak.size()) {
-            System.out.println("| ❌ ID produk tidak valid!");
+            Animtext.charAnim("| ❌ ID produk tidak valid!", 15);
+            System.out.println("+------------------------------->");
             Utilliti.logicIO(scanner);
             return;
         }
