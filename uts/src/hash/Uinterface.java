@@ -106,7 +106,23 @@ public class Uinterface {
                 }
 
                 try {
+                    int[][] tmp = new int[3][3];
                     int index = 0;
+                    for (int i = 0; i < rows; i++) {
+                        for (int j = 0; j < cols; j++) {
+                            tmp[i][j] = Integer.parseInt(nn.get(index++));
+                        }
+                    }
+                    int det = HillCipherHash.getDet(tmp);
+                    Animtext.charAnim("| Mendapat Determinan : " + det, 15);
+                    if (0 >= det) {
+                        Animtext.charAnim("| ❌matrik tidak memiliki invers.", 15);
+                        System.out.println("+------------------------------->");
+                        Utilliti.logicIO(scanner);
+                        return false;
+                    }
+
+                    index = 0;
                     for (int i = 0; i < rows; i++) {
                         for (int j = 0; j < cols; j++) {
                             matrix[i][j] = Integer.parseInt(nn.get(index++));
@@ -115,9 +131,9 @@ public class Uinterface {
                     Animtext.charAnim("| Status : ✅ Berhasil", 15);
                 } catch (NumberFormatException e) {
                     Animtext.charAnim("| Status : ❌ Input tidak valid. Harus angka semua.", 15);
+                    Animtext.charAnim(e.getMessage(), 15);
                     return false;
                 }
-
                 System.out.println("+------------------------------->");
                 Utilliti.logicIO(scanner);
                 return false;
@@ -141,6 +157,7 @@ public class Uinterface {
                     Thread.sleep(500);
                 } catch (Exception e) {
                     Animtext.charAnim("| Status : ✒️Memulai Mengubah.", 15);
+                    Animtext.charAnim(e.getMessage(), 15);
                 } finally {
                     return true;
                 }
@@ -152,6 +169,7 @@ public class Uinterface {
                     Thread.sleep(500);
                 } catch (Exception e) {
                     Animtext.charAnim("| Status : 🔒Batal Mengubah.", 15);
+                    Animtext.charAnim(e.getMessage(), 15);
                 } finally {
                     return false;
                 }
@@ -181,6 +199,7 @@ public class Uinterface {
             Animtext.charAnim("| Result : " + chiperText, 15);
         } catch (Exception e) {
             Animtext.charAnim("| Status : ❌Gagal Dencrypt.", 15);
+            Animtext.charAnim(e.getMessage(), 15);
         } finally {
             System.out.println("+------------------------------->");
             Utilliti.logicIO(scanner);
@@ -207,6 +226,7 @@ public class Uinterface {
             Animtext.charAnim("| ChiperText : " + chiperText, 15);
         } catch (Exception e) {
             Animtext.charAnim("| Status : ❌Gagal membuat.", 15);
+            Animtext.charAnim(e.getMessage(), 15);
         } finally {
             System.out.println("+------------------------------->");
             Utilliti.logicIO(scanner);
