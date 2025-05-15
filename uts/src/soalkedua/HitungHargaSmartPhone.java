@@ -75,19 +75,19 @@ public class HitungHargaSmartPhone {
 
         Utilliti.clearTerminal();
         System.out.println("PROGRAM TAMPIL PRODUK 📦");
-        System.out.println("+-----+--------------+--------------------+----------------+");
-        System.out.println("| NO  | VENDOR       | TIPE               | HARGA          |");
-        System.out.println("+-----+--------------+--------------------+----------------+");
+        System.out.println("+-----+--------------+--------------------+--------------------+");
+        System.out.println("| NO  | VENDOR       | TIPE               | HARGA              |");
+        System.out.println("+-----+--------------+--------------------+--------------------+");
 
         for (int i = 0; i < datas.size(); i++) {
             String vendor = String.format("%-12s", datas.get(i).getVendor());
             String tipe = String.format("%-18s", datas.get(i).getTipe());
             String harga = String.format("%14s", df.format(datas.get(i).getHarga()));
 
-            System.out.println(String.format("| %-3d | %-12s | %-18s | %14s |", i + 1, vendor, tipe, harga));
+            System.out.println(String.format("| %-3d | %-12s | %-18s | Rp. %14s |", i + 1, vendor, tipe, harga));
         }
 
-        System.out.println("+-----+--------------+--------------------+----------------+");
+        System.out.println("+-----+--------------+--------------------+--------------------+");
         Utilliti.logicIO(scanner);
     }
 
@@ -112,9 +112,9 @@ public class HitungHargaSmartPhone {
         int hargaSetelahPPN = harga + ppn.ppnIdr;
 
         System.out.println("| Memproses... 🛠️");
-        Animtext.charAnim("| Harga Produk       : " + df.format(harga), 20);
+        Animtext.charAnim("| Harga Produk       : Rp. " + df.format(harga), 20);
         Animtext.charAnim("| Produk terkena PPN : " + ppn.ppnCen + "%", 20);
-        Animtext.charAnim("| Harga setelah PPN  : " + df.format(hargaSetelahPPN), 20);
+        Animtext.charAnim("| Harga setelah PPN  : Rp. " + df.format(hargaSetelahPPN), 20);
 
         daftarPajak.add(new Pajak(vendor, tipe, hargaSetelahPPN));
 
