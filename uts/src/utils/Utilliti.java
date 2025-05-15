@@ -31,4 +31,21 @@ public class Utilliti {
         scanner.nextLine();
     }
 
+    public static boolean confirmIO(Scanner scanner, String test) {
+        while (true) {
+            System.out.println("+------------------------------->");
+            System.out.print(test);
+            String yesOrNo = scanner.nextLine().trim();
+
+            if (yesOrNo.equalsIgnoreCase("yes")) {
+                return true;
+            } else if (yesOrNo.equalsIgnoreCase("no")) {
+                return false;
+            } else {
+                Animtext.charAnim("| Input tidak dikenali.", 15);
+            }
+            System.out.println("+------------------------------->");
+        }
+    }
+
 }

@@ -145,7 +145,7 @@ public class HitungHargaSmartPhone {
         Animtext.charAnim("| Vendor      : " + produk.getVendor(), 20);
         Animtext.charAnim("| Tipe        : " + produk.getTipe(), 20);
         Animtext.charAnim("| Harga(IDR)  : " + df.format(produk.getHarga()), 20);
-        if (confirmIO(scanner)) {
+        if (Utilliti.confirmIO(scanner, "| Hapus produk? (yes/no): ")) {
             daftarPajak.remove(produk); // ✅ Hapus berdasarkan objek langsung
             Animtext.charAnim("| Status      : ✅ Berhasil Dihapus", 20);
         } else {
@@ -173,20 +173,4 @@ public class HitungHargaSmartPhone {
         return ppn;
     }
 
-    static boolean confirmIO(Scanner scanner) {
-        while (true) {
-            System.out.println("+------------------------------->");
-            System.out.print("| Hapus produk? (yes/no): ");
-            String yesOrNo = scanner.nextLine().trim();
-
-            if (yesOrNo.equalsIgnoreCase("yes")) {
-                return true;
-            } else if (yesOrNo.equalsIgnoreCase("no")) {
-                return false;
-            } else {
-                Animtext.charAnim("| Input tidak dikenali.", 15);
-            }
-            System.out.println("+------------------------------->");
-        }
-    }
 }
