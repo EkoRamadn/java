@@ -20,10 +20,9 @@ public class HillCipherHash {
     }
 
     public static int[][] getInvers(int[][] matrix) {
-        int det = mod(getDet(matrix), 26); // determinan harus dimodulo 26
-        int detInv = modInverse(det, 26); // cari invers modulo 26
-
-        double[][] adj = getAdjoin(matrix); // tetap pakai adjoint
+        int det = mod(getDet(matrix), 26);
+        int detInv = modInverse(det, 26);
+        double[][] adj = getAdjoin(matrix);
         int[][] invers = new int[3][3];
 
         for (int i = 0; i < 3; i++) {
@@ -86,8 +85,9 @@ public class HillCipherHash {
     }
 
     static int getDet(int[][] m) {
-        int det = (m[0][0] * m[1][1] * m[2][2]) + (m[0][1] * m[1][2] * m[2][0]) + (m[0][2] * m[1][0] * m[2][1])
-                - (m[2][0] * m[1][1] * m[0][2]) - (m[2][1] * m[1][2] * m[0][0]) - (m[2][2] * m[1][0] * m[0][1]);
+        int det = (m[0][0] * m[1][1] * m[2][2]) + (m[0][1] * m[1][2] * m[2][0])
+                + (m[0][2] * m[1][0] * m[2][1]) - (m[2][0] * m[1][1] * m[0][2])
+                - (m[2][1] * m[1][2] * m[0][0]) - (m[2][2] * m[1][0] * m[0][1]);
         return det;
     }
 
@@ -98,14 +98,16 @@ public class HillCipherHash {
                 return x;
             }
         }
-        throw new IllegalArgumentException("Determinant tidak punya invers modulo (gcd ≠ 1)");
+        throw new IllegalArgumentException(
+                "Determinant tidak punya invers modulo (gcd ≠ 1)");
     }
 
     public static String decrypt(String input, int[][] keyMatrix) {
         int blockSize = keyMatrix.length;
         int[][] invers = getInvers(keyMatrix);
 
-        String cleanInput = input.toUpperCase().replaceAll("[^A-Z]", "");
+        String cleanInput = input.toUpperCase()
+                .replaceAll("[^A-Z]", "");
 
         StringBuilder result = new StringBuilder();
 
@@ -142,8 +144,4 @@ public class HillCipherHash {
             System.out.println("not vertify");
         }
     }
-
-    // public static String decrypt(String cipherText, int[][] keyMatrix) {
-    // return vertify(cipherText, keyMatrix);
-    // }
 }
