@@ -109,11 +109,11 @@ public class HitungHargaSmartPhone {
         System.out.println("+------------------------------->");
 
         Ppn ppn = hitungPPN(harga);
-        int hargaSetelahPPN = harga + ppn.ppnIdr;
+        int hargaSetelahPPN = harga + ppn.getPpnIdr();
 
         System.out.println("| Memproses... 🛠️(IDR)");
         Animtext.charAnim("| Harga Produk       : " + df.format(harga), 20);
-        Animtext.charAnim("| Produk terkena PPN : " + ppn.ppnCen + "%", 20);
+        Animtext.charAnim("| Produk terkena PPN : " + ppn.getPpnCen() + "%", 20);
         Animtext.charAnim("| Harga setelah PPN  : " + df.format(hargaSetelahPPN), 20);
 
         daftarPajak.add(new Pajak(vendor, tipe, hargaSetelahPPN));

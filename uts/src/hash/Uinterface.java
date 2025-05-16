@@ -74,7 +74,7 @@ public class Uinterface {
             if (then) {
                 Utilliti.clearTerminal();
                 System.out.println("+------------------------------->");
-                System.out.println("| PROGRAM SET MATRIX KEY");
+                System.out.println("| PROGRAM SET MATRIX KEY 🔓");
                 System.out.println("+------------------------------->");
                 System.out.println("| Masukan Matrix baru:");
 
@@ -147,7 +147,7 @@ public class Uinterface {
         while (true) {
             Utilliti.clearTerminal();
             System.out.println("+------------------------------->");
-            Animtext.charAnim("| Matrik Kunci Saat Ini:", 0);
+            Animtext.charAnim("| Matrik Kunci Saat Ini 🔐:", 0);
             tampilMatrix(matrix, scanner);
             scanner.nextLine();
             if (Utilliti.confirmIO(scanner, "| Ubah Matrik?(yes/no): ")) {
@@ -182,7 +182,7 @@ public class Uinterface {
     static void decryptMatrix(Scanner scanner) {
         Utilliti.clearTerminal();
         System.out.println("+------------------------------->");
-        System.out.println("| PROGRAM DENCRYP ");
+        System.out.println("| PROGRAM DENCRYP 🧷");
         System.out.println("| Masukan Chiper Text: ");
         scanner.nextLine();
         System.out.print("| => ");
@@ -209,7 +209,7 @@ public class Uinterface {
     static void encrypMatrix(Scanner scanner) {
         Utilliti.clearTerminal();
         System.out.println("+------------------------------->");
-        System.out.println("| PROGRAM ENCRYP ");
+        System.out.println("| PROGRAM ENCRYP 🔗");
         System.out.println("| Masukan Password: ");
         scanner.nextLine();
         System.out.print("| => ");

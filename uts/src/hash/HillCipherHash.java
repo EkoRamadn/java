@@ -20,21 +20,23 @@ public class HillCipherHash {
     }
 
     public static int[][] getInvers(int[][] matrix) {
-        int[][] adj = getAdjoin(matrix);
-        int det = getDet(matrix);
+        int det = mod(getDet(matrix), 26); // determinan harus dimodulo 26
+        int detInv = modInverse(det, 26); // cari invers modulo 26
 
+        double[][] adj = getAdjoin(matrix); // tetap pakai adjoint
         int[][] invers = new int[3][3];
-        for (int i = 0; i < invers.length; i++) {
-            for (int j = 0; j < invers.length; j++) {
-                invers[i][j] = 1 / det * adj[i][j];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                invers[i][j] = mod((int) Math.round(adj[i][j] * detInv), 26);
             }
         }
 
         return invers;
     }
 
-    public static int[][] getAdjoin(int[][] matrix) {
-        int[][] adj = new int[3][3];
+    public static double[][] getAdjoin(int[][] matrix) {
+        double[][] adj = new double[3][3];
         adj[0][0] = (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]);
         adj[1][0] = -(matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0]);
         adj[2][0] = (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0]);
@@ -96,7 +98,7 @@ public class HillCipherHash {
                 return x;
             }
         }
-        throw new IllegalArgumentException("Tidak ada invers modulo. Determinan dan 26 tidak coprime");
+        throw new IllegalArgumentException("Determinant tidak punya invers modulo (gcd ≠ 1)");
     }
 
     public static String decrypt(String input, int[][] keyMatrix) {

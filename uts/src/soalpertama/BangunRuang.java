@@ -4,8 +4,8 @@ import java.text.DecimalFormat;
 import animasi.*;
 
 public class BangunRuang {
-    DecimalFormat df = new DecimalFormat("#.00");
-    double _volume, _luasPermukaan;
+    private DecimalFormat df = new DecimalFormat("#.00");
+    private double _volume, _luasPermukaan;
 
     // Constructor untuk Kubus
     public BangunRuang(int rusuk) {
@@ -48,11 +48,11 @@ public class BangunRuang {
     }
 
     public void tampilVolume() {
-        Animtext.charAnim("| Volume : " + df.format(getVolume()), 20);
+        Animtext.charAnim("| Volume : " + df.format(getVolume()) + "(cm3)", 20);
     }
 
     public void tampilLuasPermukaan() {
-        Animtext.charAnim("| Luas Permukaan : " + df.format(getLuasPermukaan()), 20);
+        Animtext.charAnim("| Luas Permukaan : " + df.format(getLuasPermukaan()) + "(cm2)", 20);
     }
 
     public void tampil() {

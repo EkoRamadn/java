@@ -30,7 +30,7 @@ public class ProgramBangunRuang {
                 case 1:
                     Utilliti.clearTerminal();
                     System.out.println("+------------------------------->");
-                    System.out.println("| PROGRAM KUBUS 📦");
+                    System.out.println("| PROGRAM KUBUS 📦(cm)");
                     System.out.print("| Masukkan panjang rusuk kubus: ");
                     int rusuk = scanner.nextInt();
                     BangunRuang kubus = new BangunRuang(rusuk);
@@ -40,7 +40,7 @@ public class ProgramBangunRuang {
                 case 2:
                     Utilliti.clearTerminal();
                     System.out.println("+------------------------------->");
-                    System.out.println("| PROGRAM BALOK 🗄️");
+                    System.out.println("| PROGRAM BALOK 🗄️(cm)");
                     System.out.print("| Masukkan panjang balok: ");
                     double panjang = scanner.nextDouble();
                     System.out.print("| Masukkan lebar balok: ");
@@ -54,7 +54,7 @@ public class ProgramBangunRuang {
                 case 3:
                     Utilliti.clearTerminal();
                     System.out.println("+------------------------------->");
-                    System.out.println("| PROGRAM SILINDER 🔋");
+                    System.out.println("| PROGRAM SILINDER 🔋(cm)");
                     System.out.print("| Masukkan jari-jari silinder: ");
                     double jariSilinder = scanner.nextDouble();
                     System.out.print("| Masukkan tinggi silinder: ");
@@ -66,7 +66,7 @@ public class ProgramBangunRuang {
                 case 4:
                     Utilliti.clearTerminal();
                     System.out.println("+------------------------------->");
-                    System.out.println("| PROGRAM BOLA ⚽");
+                    System.out.println("| PROGRAM BOLA ⚽(cm)");
                     System.out.print("| Masukkan jari-jari bola: ");
                     double jariBola = scanner.nextDouble();
                     BangunRuang bola = new BangunRuang(jariBola);
